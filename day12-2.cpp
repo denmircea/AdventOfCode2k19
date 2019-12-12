@@ -104,6 +104,8 @@ int main()
         int ok=0;
             for(j=1;j<=4;j++){
                 if(p[j].z==p2[j].z&&v[j].z==0){
+                        /// schimb pentru x y z si determin perioada
+                        /// rulez separat programul
                    ok++;
                 }
             }
