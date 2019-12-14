@@ -123,10 +123,11 @@ long long st=1,dr=10000000,mid;
     dfs(2,0);
     sum=0;
     for(auto it=output.begin();it!=output.end();it++){
-        long long nod=*it;
+        int nod=*it;
         //cout<<nod<<" => "<<nev[nod]<<endl;
         long long nr=1;
-        while(reactie[nod]*nr<nev[nod])
+        nr=nev[nod]/reactie[nod];
+        if(reactie[nod]*nr<nev[nod])
             nr++;
         sum+=nr*c[nod][1];
         if(sum>1000000000000)
