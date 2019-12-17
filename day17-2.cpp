@@ -66,7 +66,7 @@ long long solve(string s,long long poz)
     { /// colapsabil
         if(cod==99)
         {
-            cout<<"finish";
+          //  cout<<"finish";
             return -1;
         }
         if(cod==1)
@@ -136,7 +136,7 @@ long long solve(string s,long long poz)
     }
     else if(cod==4)
     {
-        cout<<*param[1]<<" ";
+       fout<<(char)*param[1];
         i+=2;
     }
 }
@@ -157,14 +157,14 @@ int main()
     int sum=0;
     while(fin>>mat[sz++]);
     for(i=1;i<sz-1;i++){
-        for(int j=1;j<mat[1].size()-1;j++){
+        for(int j=1;j<mat[1].size();j++){
             if(
+               j<mat[1].size()-1&&
                 mat[i][j]=='#'
                &&mat[i-1][j]=='#'
                &&mat[i][j-1]=='#'
                &&mat[i+1][j]=='#'
                &&mat[i][j+1]=='#'){
-                mat[i][j]='O';
                 sum+=i*j;
                }
             if(mat[i][j]=='^'){
@@ -173,41 +173,38 @@ int main()
             }
         }
     }
-    cout<<sum;
+    cout<<sum<<endl;
     i=pozx;
     int j=pozy;
     j--;
+    cout<<i<<" "<<j<<endl;;
     int lin[]={-1,0,1,0};
     int col[]={0,1,0,-1};
-   int dir=3; // L
+   int dir=3+400; // L
    nr=1;
    cout<<endl;
         cout<<"L,";
-    while(mat[i+lin[dir%4]][j+col[dir%4]]=='#'||mat[i+lin[dir%4]][j+col[dir%4]]=='O'){
-            if(mat[i][j]!='O')
-                mat[i][j]='%';
-
+    while(mat[i+lin[dir%4]][j+col[dir%4]]=='#'){
         while(
               i+lin[dir%4]>=0&&j+col[dir%4]>=0&&i<sz&&j<mat[1].size()&&
-              (mat[i+lin[dir%4]][j+col[dir%4]]=='#'||mat[i+lin[dir%4]][j+col[dir%4]]=='O')
-
+              (mat[i+lin[dir%4]][j+col[dir%4]]=='#')
               ){
             i=i+lin[dir%4];
             j=j+col[dir%4];
-            if(mat[i][j]!='O'){
-                mat[i][j]='#';
-            }
             nr++;
         }
         cout<<nr<<",";
+//        cout<<mat[i-1][j-1]<<mat[i-1][j]<<mat[i-1][j+1]<<endl;
+//        cout<<mat[i][j-1]<<mat[i][j]<<mat[i][j+1]<<endl;
+//        cout<<mat[i+1][j-1]<<mat[i+1][j]<<mat[i+1][j+1]<<endl;
         dir++;
-        if(mat[i+lin[dir%4]][j+col[dir%4]]=='#'||mat[i+lin[dir%4]][j+col[dir%4]]=='O'){
+        if(i+lin[dir%4]>=0&&j+col[dir%4]>=0&&i<sz&&j<mat[1].size()&&mat[i+lin[dir%4]][j+col[dir%4]]=='#'){
             cout<<"R,";
             nr=0;
             continue;
         }
         dir-=2;
-        if(mat[i+lin[dir%4]][j+col[dir%4]]=='#'||mat[i+lin[dir%4]][j+col[dir%4]]=='O'){
+        if(i+lin[dir%4]>=0&&j+col[dir%4]>=0&&i<sz&&j<mat[1].size()&&mat[i+lin[dir%4]][j+col[dir%4]]=='#'){
             cout<<"L,";
             nr=0;
             continue;
