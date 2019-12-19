@@ -6,7 +6,7 @@ long long n,k=-1,nr,i,a,b;
 char c;
 long long v[100000],V[100000],nrsol;
 bool output;
-long long vect[100000];
+long long vect[10000000];
 string s[100000];
 int fr[20];
 long long *param[10];
@@ -147,8 +147,8 @@ int main()
 /// 31 40 33
 /// 41 49
 
-    for( a=0;a<=99;a++){
-    for( b=0;b<=1;b++){
+    for( a=0;a<=49;a++){
+    for( b=0;b<=49;b++){
             nr=0;
           // cout<<a<<" "<<b<<endl;
     k=-1;
