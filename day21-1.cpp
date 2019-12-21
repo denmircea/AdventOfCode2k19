@@ -72,7 +72,7 @@ long long solve(string s,long long poz)
         /// colapsabil
         if(cod==99)
         {
-            cout<<"finish";
+            cout<<"\n\nfinish\n";
             return -1;
         }
         if(cod==1)
@@ -149,7 +149,7 @@ long long solve(string s,long long poz)
     }
     else if(cod==4)
     {
-        cout<<(char)*param[1]<<" ";
+        cout<<(char)*param[1];
          outputs.push_back(*param[1]);
         i+=2;
     }
