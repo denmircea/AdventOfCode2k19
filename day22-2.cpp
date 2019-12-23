@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "Infinit.h"
+#include "InfInt.h"
 /// https://github.com/sercantutar/infint/blob/master/InfInt.h
 using namespace std;
 ifstream fin ("test.in");
