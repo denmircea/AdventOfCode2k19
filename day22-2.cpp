@@ -86,6 +86,6 @@ int main()
     rezultat%=mod;
     rezultat+=a_la_n*x%mod;
     rezultat%=mod;
-   cout<<"rez: "<<rezultat;
+   cout<<"rez: "<<rezultat; 
 }
 
