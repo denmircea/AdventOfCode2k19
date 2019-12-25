@@ -1,3 +1,18 @@
+/*
+CRACIUN FERICIT!!
+
+- fuel cell
+- cake
+- pointer
+- boulder
+- mutex
+- antenna
+- tambourine
+- coin
+*/
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 ifstream fin("test.in");
